@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>2026 世界杯 · 前瞻与脉络</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: #f3f9fc;
+      color: #1e2b32;
+      line-height: 1.7;
+      padding: 0 1rem 3rem;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    /* hero */
+    .hero {
+      background: linear-gradient(135deg, #0b3a43 0%, #1b6f7a 100%);
+      color: white;
+      padding: 3.5rem 2rem;
+      border-radius: 2rem;
+      margin: 2rem 0 3rem;
+      text-align: center;
+      box-shadow: 0 12px 28px rgba(6, 60, 70, 0.18);
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 680px;
+      margin: 0 auto;
+      opacity: 0.92;
+    }
+
+    .hero .tagline {
+      margin-top: 1.6rem;
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.18);
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      backdrop-filter: blur(2px);
+    }
+
+    /* 网格卡片区 — 优势 / 特点 */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.6rem;
+      margin: 2.8rem 0;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 1.8rem 1.5rem;
+      border-radius: 1.2rem;
+      box-shadow: 0 4px 12px rgba(0, 40, 45, 0.06);
+      border: 1px solid #d8eef1;
+      transition: 0.2s;
+    }
+
+    .feature-card:hover {
+      border-color: #58b9c9;
+      box-shadow: 0 6px 16px rgba(27, 111, 122, 0.12);
+    }
+
+    .feature-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #0a4b55;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .feature-card h3::before {
+      content: "⚽";
+      font-size: 1.4rem;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      color: #2c424a;
+    }
+
+    /* 说明区（含卡片列表） */
+    .detail-area {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 2.2rem 2rem;
+      margin: 2.8rem 0;
+      border: 1px solid #d1e7ec;
+    }
+
+    .detail-area h2 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: #0a4b55;
+      margin-bottom: 0.5rem;
+    }
+
+    .detail-area .sub {
+      color: #3c5c64;
+      font-size: 0.95rem;
+      margin-bottom: 1.8rem;
+      border-left: 4px solid #58b9c9;
+      padding-left: 1rem;
+    }
+
+    .info-item {
+      background: #f5fbfd;
+      padding: 1rem 1.2rem;
+      margin-bottom: 0.8rem;
+      border-radius: 1rem;
+      border-left: 5px solid #1b6f7a;
+    }
+
+    .info-item span {
+      font-weight: 600;
+      color: #0b3a43;
+    }
+
+    .info-item p {
+      margin-top: 0.3rem;
+      font-size: 0.95rem;
+    }
+
+    .link-sentence {
+      background: #ecf6f8;
+      padding: 1.2rem 1.5rem;
+      border-radius: 1.2rem;
+      margin: 2rem 0 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #cae1e6;
+    }
+
+    .link-sentence a {
+      color: #0b6f7a;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid #58b9c9;
+      transition: 0.15s;
+    }
+
+    .link-sentence a:hover {
+      background: #d4edf2;
+      border-bottom-color: #0b3a43;
+    }
+
+    /* FAQ 摘要 */
+    .faq-summary {
+      background: #e8f4f7;
+      border-radius: 1.5rem;
+      padding: 1.8rem 2rem;
+      margin: 2.8rem 0;
+    }
+
+    .faq-summary h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #09424c;
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1rem;
+      border-bottom: 1px dashed #b5d4da;
+      padding-bottom: 1rem;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      color: #12545f;
+    }
+
+    .faq-a {
+      margin-top: 0.2rem;
+      font-size: 0.92rem;
+      color: #2f4e56;
+    }
+
+    /* 底部 */
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2.8rem;
+      padding-top: 1.6rem;
+      border-top: 1px solid #c6dce1;
+      font-size: 0.88rem;
+      color: #3e616a;
+    }
+
+    .footer-links a {
+      color: #0a5b66;
+      text-decoration: none;
+      margin-right: 1.2rem;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-note {
+      color: #5b7c84;
+    }
+
+    /* 移动端友好 */
+    @media (max-width: 640px) {
+      body {
+        padding: 0 0.6rem 2rem;
+      }
+
+      .hero {
+        padding: 2.2rem 1.2rem;
+        border-radius: 1.4rem;
+      }
+
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .detail-area {
+        padding: 1.5rem 1.2rem;
+      }
+
+      .faq-summary {
+        padding: 1.4rem 1.2rem;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      .link-sentence {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero 区 -->
+  <div class="hero">
+    <h1>世界杯 · 2026</h1>
+    <p>从预选赛到决赛圈，从赛制革新到东道主布局，一份平实的前瞻说明。</p>
+    <div class="tagline">48 支球队 · 104 场比赛 · 北美三国联办</div>
+  </div>
+
+  <!-- 优势区 / 特点卡片 -->
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h3>全新赛制</h3>
+      <p>首次扩军至 48 队，小组赛 12 组每组 4 队，淘汰赛增加一轮。更多球队参与，竞争阶段更密集。</p>
+    </div>
+    <div class="feature-card">
+      <h3>跨区联办</h3>
+      <p>美国、加拿大、墨西哥共同承办，16 座城市 16 座球场，覆盖北美不同时区与气候。</p>
+    </div>
+    <div class="feature-card">
+      <h3>亚洲区名额</h3>
+      <p>亚足联获得 8.5 个席位（含附加赛通道），相比往届增加 4 席。预选赛分四个阶段，竞争周期拉长。</p>
+    </div>
+    <div class="feature-card">
+      <h3>比赛节奏</h3>
+      <p>2026 年 6 月 11 日开幕至 7 月 19 日决赛，共 39 天。小组赛阶段每天安排 4–6 场比赛。</p>
+    </div>
+  </div>
+
+  <!-- 说明区 承接上方 -->
+  <div class="detail-area">
+    <h2>关于本届世界杯的几个背景</h2>
+    <div class="sub">基于已公布赛历与资格分配方案整理</div>
+
+    <div class="info-item">
+      <span>· 东道主</span>
+      <p>美国（11 座球场）、墨西哥（3 座）、加拿大（2 座）。决赛场地为大都会人寿体育场（纽约/新泽西）。</p>
+    </div>
+    <div class="info-item">
+      <span>· 预选赛进程</span>
+      <p>南美区、欧洲区、非洲区、亚洲区及中北美及加勒比海地区预选赛均已启动或完成阶段性分组。亚洲区第三阶段 18 强赛将于 2025 年决出直接晋级名额。</p>
+    </div>
+    <div class="info-item">
+      <span>· 附加赛</span>
+      <p>六支球队（来自各大洲）争夺最后两个正赛席位，附加赛将于 2026 年 3 月在主办国进行。</p>
+    </div>
+
+    <!-- 自然嵌入链接的段落 -->
+    <div class="link-sentence">
+      📌 如果你想系统了解 2026 年赛事日程、分组抽签时间以及各队动态，可以持续关注
+      <a href="https://chinesecn-fifa2026.com">世界杯</a> 专题页面，内容会随官方信息同步更新。
+    </div>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-summary">
+    <h2>常见问题摘要</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">❓ 2026 年世界杯是否还是 32 支球队？</div>
+      <div class="faq-a">不是。本届正式扩军至 48 支队伍，小组赛阶段分为 12 组，每组前两名以及 8 个成绩最好的小组第三晋级 32 强淘汰赛。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">❓ 中国队的晋级形势如何？</div>
+      <div class="faq-a">中国男足目前处于亚洲区第三阶段（18 强赛），小组前两名直接晋级，第三或第四名可进入第四阶段附加赛。具体走势需看后续比赛结果。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">❓ 比赛时间对中国球迷友好吗？</div>
+      <div class="faq-a">大部分比赛在美国东部/中部及加拿大东部时间进行，对应北京时间凌晨至上午时段。周末及决赛（当地时间 7 月 19 日）可能安排在晚间。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">❓ 如何获取可靠赛程？</div>
+      <div class="faq-a">建议直接查阅国际足联官网或本站整理的
+        <a href="https://chinesecn-fifa2026.com" style="color:#0b6f7a; font-weight:500; text-decoration:underline;">世界杯</a>
+        赛程专页，数据以官方发布为准。
+      </div>
+    </div>
+  </div>
+
+  <!-- 底部链接 -->
+  <div class="footer-links">
+    <div>
+      <a href="https://chinesecn-fifa2026.com">世界杯</a>
+      <a href="#">赛程概览</a>
+      <a href="#">资格说明</a>
+    </div>
+    <div class="footer-note">
+      © 内容整理 · 基于公开信息 · 2026
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
