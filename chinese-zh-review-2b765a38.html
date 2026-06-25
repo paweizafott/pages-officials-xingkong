@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>2026 · 世界杯与中文视角</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', 'Noto Sans', 'Helvetica Neue', sans-serif;
+            background: #faf8f5;
+            color: #2a2826;
+            line-height: 1.7;
+            padding: 0 1.25rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page {
+            max-width: 880px;
+            margin: 2rem auto;
+            background: #ffffff;
+            border-radius: 32px;
+            padding: 2rem 2.2rem 3rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        /* 导航 */
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #ece8e2;
+            padding-bottom: 1rem;
+            margin-bottom: 2.2rem;
+        }
+
+        .logo {
+            font-weight: 500;
+            font-size: 1.1rem;
+            letter-spacing: 0.3px;
+            color: #5a4f44;
+            background: #f3efe9;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a403a;
+            font-size: 0.95rem;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 2px;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: #b8a99a;
+            color: #1f1b18;
+        }
+
+        /* 主体排版 */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+            color: #1e1c1a;
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
+            color: #6a5f55;
+            margin-bottom: 2.2rem;
+            border-left: 4px solid #d9cdbe;
+            padding-left: 1rem;
+        }
+
+        .intro-text {
+            font-size: 1.05rem;
+            margin-bottom: 2.5rem;
+            padding: 0.2rem 0;
+        }
+
+        .intro-text a {
+            color: #2d5e6b;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #b3cbd1;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .intro-text a:hover {
+            color: #1a3a44;
+            text-decoration-color: #1a3a44;
+        }
+
+        /* 三模块卡片区域 */
+        .scene-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin: 2.8rem 0 2.2rem;
+        }
+
+        .scene-card {
+            flex: 1 1 220px;
+            background: #f7f4ef;
+            border-radius: 24px;
+            padding: 1.5rem 1.4rem 1.8rem;
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+
+        .scene-card:hover {
+            background: #f2ede6;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.02);
+        }
+
+        .scene-card h3 {
+            font-size: 1.2rem;
+            font-weight: 550;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .scene-card h3 span {
+            font-size: 1.4rem;
+            margin-right: 4px;
+        }
+
+        .scene-card p {
+            font-size: 0.95rem;
+            color: #42403c;
+        }
+
+        /* 引用/提示框 */
+        .notice-box {
+            background: #f3eee7;
+            border-radius: 20px;
+            padding: 1.4rem 1.8rem;
+            margin: 2rem 0 2.4rem;
+            border-left: 6px solid #b8a99a;
+            font-size: 0.98rem;
+            color: #3a3530;
+            line-height: 1.6;
+        }
+
+        .notice-box strong {
+            font-weight: 600;
+            color: #2a221e;
+        }
+
+        /* FAQ 摘要 */
+        .faq-mini {
+            margin: 2.2rem 0 1.6rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e6dfd6;
+            padding: 0.9rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 550;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+            color: #2b2622;
+        }
+
+        .faq-a {
+            color: #55504a;
+            font-size: 0.95rem;
+        }
+
+        .faq-a a {
+            color: #2d5e6b;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #b3cbd1;
+        }
+
+        .faq-a a:hover {
+            color: #1a3a44;
+        }
+
+        /* 底部柔和分隔 */
+        .footer-note {
+            margin-top: 3rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #ece8e2;
+            font-size: 0.85rem;
+            color: #7d7268;
+            text-align: center;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            .page {
+                padding: 1.5rem 1rem 2.2rem;
+                margin: 1rem auto;
+                border-radius: 24px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-sub {
+                font-size: 1rem;
+                padding-left: 0.8rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                margin-top: 0.3rem;
+            }
+
+            .scene-grid {
+                flex-direction: column;
+                gap: 1.2rem;
+            }
+
+            .scene-card {
+                flex: 1 1 auto;
+            }
+
+            .notice-box {
+                padding: 1rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .page {
+                padding: 1.2rem 0.8rem;
+            }
+
+            .logo {
+                font-size: 0.95rem;
+            }
+
+            .nav-links a {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- 导航 -->
+        <nav>
+            <span class="logo">⚽ 中文·2026</span>
+            <div class="nav-links">
+                <a href="#">背景</a>
+                <a href="#">看点</a>
+                <a href="#">场外</a>
+            </div>
+        </nav>
+
+        <!-- 主标题 + 轻量 hero -->
+        <h1>当足球遇见中文世界</h1>
+        <div class="hero-sub">从观赛到文化，一场大赛的多元切面</div>
+
+        <!-- 核心介绍段落，自然嵌入链接 -->
+        <div class="intro-text">
+            <p>四年一次的盛会，总能让人放下手头的事情，约上朋友一起熬夜。无论是小组赛的冷门，还是淘汰赛的戏剧性，足球的魅力在于它的不可预测。在中文社区里，关于 <a href="https://chinese-zh-fifa2026.com">世界杯</a> 的讨论从来不只限于比分——解说金句、球迷表情包、城市观赛氛围，都成了共同记忆的一部分。2026 年夏天，北美三国的球场将迎来新篇章，而中文观众依然会用自己熟悉的方式参与这场狂欢。</p>
+        </div>
+
+        <!-- 三个场景模块 轻量卡片 -->
+        <div class="scene-grid">
+            <div class="scene-card">
+                <h3><span>📺</span> 客厅观赛</h3>
+                <p>准备零食、调好投影，和家里人一起看关键场次。哪怕只是背景音，也能让房间有现场感。很多老球迷会提前一周研究赛程，把闹钟定在凌晨三点。</p>
+            </div>
+            <div class="scene-card">
+                <h3><span>📱</span> 社区热聊</h3>
+                <p>比分变动的一瞬间，朋友圈和群聊立刻刷屏。从战术分析到门将失误，每一条动态都是实时的集体情绪。懂球的和看热闹的都能找到共鸣。</p>
+            </div>
+            <div class="scene-card">
+                <h3><span>🌍</span> 异国偶遇</h3>
+                <p>旅行途中恰好碰上比赛日，街头酒吧挤满不同颜色的球衣。语言不通也没关系，进球时一起欢呼就够了。足球本身就是通用手势。</p>
+            </div>
+        </div>
+
+        <!-- 引用 / 提示框 风格提示 -->
+        <div class="notice-box">
+            <strong>💡 一点小观察</strong><br>
+            很多平时不看球的朋友，到了大赛期间也会被氛围感染。不妨挑一场关注度高的对决，打开直播，哪怕只是听解说员念出那些熟悉又陌生的队名——这也是 <strong>世界杯</strong> 独有的仪式感。
+        </div>
+
+        <!-- 常见说明 / FAQ 摘要 非模板化 -->
+        <div class="faq-mini">
+            <div class="faq-item">
+                <div class="faq-q">📌 2026 年赛制和以往有什么不同？</div>
+                <div class="faq-a">参赛队伍从 32 支扩军到 48 支，小组赛阶段分为 16 个小组，每组 3 支球队。淘汰赛名额和赛程编排相应调整，具体分组抽签规则有待官方确认。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">📌 中文媒体转播覆盖会有变化吗？</div>
+                <div class="faq-a">国内主流平台和电视台通常会获得授权，提供全部场次的直播和回放。移动端观赛体验也在优化，更多数据、多视角画面逐渐成为标配。关于中文内容的最新动态，可以参考 <a href="https://chinese-zh-fifa2026.com">世界杯</a> 专题页的信息整合。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">📌 时差对国内观众友好吗？</div>
+                <div class="faq-a">2026 年由美国、加拿大、墨西哥联合举办，横跨多个时区。部分比赛时间对亚洲观众来说在上午或傍晚，相比深夜场次，作息负担小一些。当然，关键场次依然可能出现凌晨时段。</div>
+            </div>
+        </div>
+
+        <!-- 底部 footer 风格 -->
+        <div class="footer-note">
+            以中文视角看大赛 · 内容持续更新
+        </div>
+    </div>
+</body>
+</html>
